@@ -11,7 +11,7 @@ export default class WelcomeHeader extends Component {
           <p>With BookShelf, you can find your favorite books, save them to collections, set reading goals, and track your progress
           </p>
         </div>
-        <Link to="/login">
+        <Link to="/signup">
           <button id="get-started">Get Started</button>
         </Link>
       </div>

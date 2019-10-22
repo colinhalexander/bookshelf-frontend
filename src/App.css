@@ -126,10 +126,14 @@ main {
   margin-right: 5px;
 }
 
+#search-submit {
+  margin-left: 5px;
+}
+
 .book-display {
   padding: 15px;
-  /* box-shadow: 0 0 1px black; */
   transition: all 0.5s;
+  animation: fade-in 1s;
 }
 
 .book-display > img {
@@ -142,4 +146,14 @@ main {
 
 .book-display > h4 {
   font-weight: bold;
+}
+
+#no-results {
+  grid-column: 2 / 4;
+  margin: 100px;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0};
+  100% {opacity: 1};
 }

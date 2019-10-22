@@ -5,7 +5,7 @@ export default class BookDisplay extends Component {
   render() {
     return (
       <div className="book-display">
-        <img src={this.props.book_image} alt="book cover"/>
+        <img src={this.props.image_url} alt="book cover"/>
         <h4>{this.toTitleCase(this.props.title)}</h4>
         <p>{this.props.author}</p>
       </div>
