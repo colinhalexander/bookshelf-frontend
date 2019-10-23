@@ -15,8 +15,8 @@ export default class SearchContainer extends Component {
         
         const books = response.results.books.map(book => {
           return {
-            title: book.title,
-            author: book.author,
+            title: this.toTitleCase(book.title),
+            authors: book.author,
             description: book.description,
             publisher: book.publisher,
             image_url: book.book_image,
@@ -56,8 +56,8 @@ export default class SearchContainer extends Component {
 
           if (this.bookDataIsValid(book)) {
             return {
-              title: book.volumeInfo.title,
-              author: this.authorsArrayToString(book.volumeInfo.authors),
+              title: this.toTitleCase(book.volumeInfo.title),
+              authors: this.authorsArrayToString(book.volumeInfo.authors),
               description: book.volumeInfo.description,
               publisher: book.volumeInfo.publisher,
               image_url: book.volumeInfo.imageLinks.thumbnail,
@@ -88,6 +88,12 @@ export default class SearchContainer extends Component {
       book.volumeInfo.industryIdentifiers
     ]
     return (keys.filter(key => key).length === keys.length && keys[6].length === 2)
+  }
+
+  toTitleCase = (string) => {
+    return string.toLowerCase().split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ")
   }
 
   authorsArrayToString = (authors) => {

@@ -56,7 +56,7 @@ nav {
   justify-content: space-between;
   padding: 0px 100px;
   height: 300px;
-  background: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1082&q=80");
+  background: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1082&q=80") 10% 15%;
   color: white;
 }
 
@@ -80,7 +80,7 @@ nav {
 }
 
 #get-started {
-  background-color: rgba(0, 105, 105, 0.527);
+  background-color: rgba(0, 105, 105, 0.452);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -88,7 +88,7 @@ nav {
   font-size: 16px;
   font-weight: 500;
   margin-right: 100px;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 
 #get-started:hover {
@@ -138,10 +138,12 @@ main {
 
 .book-display > img {
   height: 150px;
+  margin-bottom: 5px;
 }
 
 .book-display:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .book-display > h4 {
@@ -151,6 +153,77 @@ main {
 #no-results {
   grid-column: 2 / 4;
   margin: 100px;
+}
+
+.book-details-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.507);
+}
+
+.book-details {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background-color: #35384E;
+  border: double 5px black;
+  width: 700px;
+  height: 400px;
+  color: rgb(255, 234, 224);
+}
+
+.book-image-and-links {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.book-image-and-links > img {
+  width: 200px;
+}
+
+.book-image-and-links > a {
+  color: rgb(128, 194, 216);
+}
+
+.book-information {
+  text-align: left;
+  margin: 20px 0px 20px 10px;
+  overflow: auto;
+}
+
+.book-information > h3 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.small-print {
+  font-size: 14px;
+}
+
+#close-details {
+  position: relative;
+  left: 380px;
+  border: none;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 100px;
+}
+
+#close-details:hover {
+  transform: scale(1.05);
 }
 
 @keyframes fade-in {

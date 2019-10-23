@@ -1,20 +1,41 @@
 import React, { Component } from 'react'
+import BookDetails from './BookDetails'
 
 export default class BookDisplay extends Component {
 
-  render() {
-    return (
-      <div className="book-display">
-        <img src={this.props.image_url} alt="book cover"/>
-        <h4>{this.toTitleCase(this.props.title)}</h4>
-        <p>{this.props.author}</p>
-      </div>
-    )
+  state = {
+    showDetails: false
   }
 
-  toTitleCase = (string) => {
-    return string.toLowerCase().split(" ")
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
+  handleClick = () => {
+    this.setState({
+      showDetails: true
+    })
+  }
+
+  closeDetails = () => {
+    this.setState({
+      showDetails: false
+    })
+  }
+  
+  showDetails = () => {
+    if (this.state.showDetails) {
+      return <BookDetails closeDetails={this.closeDetails} {...this.props} />
+    }
+    return <></>
+  }
+
+  render() {
+    return (
+      <>
+        <div className="book-display" onClick={this.handleClick}>
+          <img src={this.props.image_url} alt="book cover"/>
+          <h4>{this.props.title}</h4>
+          <p>{this.props.authors}</p>
+        </div>
+        {this.showDetails()}
+      </>
+    )
   }
 }
