@@ -7,7 +7,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <>
-        <WelcomeHeader />
+        <WelcomeHeader user={this.props.user} />
         <main>
           <SearchContainer />
         </main>

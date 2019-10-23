@@ -178,7 +178,6 @@ main {
   width: 700px;
   height: 400px;
   color: rgb(255, 234, 224);
-  animation: zoom-in 0.6s ease;
 }
 
 .book-image-and-links {
@@ -330,9 +329,4 @@ main {
 @keyframes fade-in {
   0% {opacity: 0};
   100% {opacity: 1};
-}
-
-@keyframes zoom-in {
-  0% {transform: scale(0.7)};
-  100% {transform: scale(1)};
 }

@@ -65,9 +65,17 @@ export default class SignInPage extends Component {
       .catch(error => console.log(error))
   }
 
-  // logInUser = (request) => {
-
-  // }
+  logInUser = (request) => {
+    fetch("http://localhost:3000/login", request)
+      .then(response => response.json())
+      .then(response => {
+        localStorage.setItem("token", response.token)
+        localStorage.setItem("userId", response.user_id)
+        this.props.setUser(response.user_id)
+        window.location.href = "http://localhost:3001/"
+      })
+      .catch(error => console.log(error))
+  }
 
   render() {
     return (

@@ -4,6 +4,14 @@ import logo from '../logo.png'
 
 export default class NavBar extends Component {
 
+  toggleLoginLink = () => {
+    if (this.props.user) {
+      return (<Link className="nav-link" to={`/users/${this.props.user.username}`} >{this.props.user.username}</Link>)
+    } else {
+      return (<Link className="nav-link" to={{ pathname: "/signin", existingUser: true}} >Login</Link>)
+    }
+  }
+
   render() {
     return (
       <header>
@@ -16,7 +24,7 @@ export default class NavBar extends Component {
         <nav>
           <Link className="nav-link" to="/about" >About</Link>
           <Link className="nav-link" to="/contact" >Contact</Link>
-          <Link className="nav-link" to={{ pathname: "/signin", existingUser: true}} >Login</Link>
+          {this.toggleLoginLink()}
         </nav>
       </header>
     )
