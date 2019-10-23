@@ -8,10 +8,10 @@ export default class WelcomeHeader extends Component {
       <div className="welcome-header">
         <div className="welcome-description">
           <h2>Welcome</h2>
-          <p>With BookShelf, you can find your favorite books, save them to collections, set reading goals, and track your progress
+          <p>With BookShelf, you can find your favorite books, save them to collections, set reading goals, and track your progress.
           </p>
         </div>
-        <Link to="/signup">
+        <Link to={{ pathname: "/signin", existingUser: false}} >
           <button id="get-started">Get Started</button>
         </Link>
       </div>
