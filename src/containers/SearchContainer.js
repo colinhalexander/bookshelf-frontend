@@ -110,7 +110,7 @@ export default class SearchContainer extends Component {
     return (
       <section className="search-container">
         <SearchBar query={this.state.query} handleSubmit={this.handleSubmit} />
-        <SearchResults books={this.state.books} />
+        <SearchResults user={this.props.user} books={this.state.books} />
       </section>
     )
   }

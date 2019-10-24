@@ -38,6 +38,7 @@ export default class App extends Component {
           user: response
         })
       })
+      .catch(error => console.log(error))
   }
 
   render() {
@@ -51,7 +52,7 @@ export default class App extends Component {
           <Route 
             exact path="/signin" 
             render={(props) => <SignInPage setUser={this.setUser} {...props} />} />
-          <Route exact path="/users/:username" component={UserPage} />
+          <Route exact path="/users/:username" render={() => <UserPage user={this.state.user} setUser={this.setUser} />} />
         </div>
       </Router>
     )

@@ -7,7 +7,7 @@ const BookDetails = (props) => {
       <div className="book-details">
         <div className="book-image-and-links">
           <img src={props.image_url} alt={props.title} />
-          <a href={props.buy_url} target="_blank" rel="noopener noreferrer">Buy this book</a>
+          <a className="link" href={props.buy_url} target="_blank" rel="noopener noreferrer">Buy this book</a>
         </div>
         <div className="book-information">
           <h3>{props.title}</h3>

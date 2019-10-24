@@ -18,9 +18,9 @@ export default class SignInPage extends Component {
 
   toggleExistingUser = () => {
     if (this.props.location.existingUser) {
-      return <Link to={{ pathname: "/signin", existingUser: false}} >Don't have an account yet?</Link>
+      return <Link className="link" to={{ pathname: "/signin", existingUser: false}} >Don't have an account yet?</Link>
     } else {
-      return <Link to={{ pathname: "/signin", existingUser: true}} >Already have an account?</Link>
+      return <Link className="link" to={{ pathname: "/signin", existingUser: true}} >Already have an account?</Link>
     }
   }
 
@@ -60,7 +60,11 @@ export default class SignInPage extends Component {
     fetch("http://localhost:3000/users", request)
       .then(response => response.json())
       .then(response => {
-        console.log(response)
+        if (!response.error) {
+          this.logInUser(request)
+        } else {
+          console.log(response.error)
+        }
       })
       .catch(error => console.log(error))
   }

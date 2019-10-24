@@ -50,6 +50,12 @@ nav {
   color: rgb(255, 217, 198);
 }
 
+.user-link {
+  border-left: solid 1px rgb(255, 217, 198);
+  margin-left: 5px;
+  padding-left: 15px;
+}
+
 .welcome-header {
   display: flex;
   align-items: center;
@@ -192,7 +198,7 @@ main {
   width: 200px;
 }
 
-.book-image-and-links > a {
+.link {
   color: rgb(128, 194, 216);
 }
 
@@ -326,7 +332,45 @@ main {
   width: 60px;
 }
 
+.user-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  background: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1453&q=80");
+  background-size: cover;
+  min-height: calc(100vh - 60px);
+  opacity: 0.9;
+}
+
+.user-page-wrapper > h3 {
+  font-size: 2rem;
+  padding: 10px 20px;
+  background-color: #D6AB95;
+  position: relative;
+  top: 25px;
+  right: 200px;
+  border: solid 2px black;
+  color: black;
+
+}
+
+.user-page {
+  display: grid;
+  height: 450px;
+  width: 700px;
+  background-color: #35384E;
+  border: double 1px black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
+  /* opacity: 1; */
+}
+
 @keyframes fade-in {
   0% {opacity: 0};
   100% {opacity: 1};
+}
+
+@keyframes zoom-in {
+  0% {transform: scale(0)}
+  100% {transform: scale(1)}
 }
