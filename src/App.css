@@ -348,21 +348,71 @@ main {
   padding: 10px 20px;
   background-color: #D6AB95;
   position: relative;
-  top: 25px;
   right: 200px;
   border: solid 2px black;
   color: black;
-
+  z-index: 1;
 }
 
 .user-page {
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 450px;
   width: 700px;
   background-color: #35384E;
   border: double 1px black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
-  /* opacity: 1; */
+  position: relative;
+  bottom: 25px;
+}
+
+.collections-display {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  bottom: 10px;
+}
+
+.collections-list {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  align-self: flex-end;
+}
+
+.collection-header {
+  background-color: #D6AB95;
+  padding: 10px 20px;
+  border: solid 1px black;
+  cursor: pointer;
+  width: 100px;
+  position: relative;
+}
+
+.collection-header:hover {
+  font-weight: 600
+}
+
+.collection-header.active {
+  font-weight: 600
+}
+
+.collection-books {
+  display: flex;
+  flex-flow: row nowrap;
+  grid-template-rows: 1fr;
+  background-color: #D6AB95;
+  height: 300px;
+  width: 550px;
+  border: solid 1px black;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.collection-books > .book-display {
+  padding: 0px;
+  margin: 50px 15px 0px 15px;
+  min-width: 160px;
 }
 
 @keyframes fade-in {

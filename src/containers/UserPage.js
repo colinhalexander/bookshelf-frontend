@@ -5,12 +5,13 @@ import CollectionBooks from '../components/CollectionBooks'
 export default class UserPage extends Component {
 
   state = {
-    collection: "To Read"
+    activeCollection: "Reading Now"
   }
 
   handleClick = (event) => {
+    console.log(event.target.innerText)
     this.setState({
-      collection: event.target.innerText
+      activeCollection: event.target.innerText
     })
   }
 
@@ -25,8 +26,10 @@ export default class UserPage extends Component {
       <div className="user-page-wrapper">
         <h3>Your Collections</h3>
         <section className="user-page">
-          <CollectionsList user={this.props.user} handleClick={this.handleClick} />
-          <CollectionBooks collection={this.state.collection} user={this.props.user} />
+          <div className="collections-display">
+            <CollectionsList user={this.props.user} activeCollection={this.state.activeCollection} handleClick={this.handleClick} />
+            <CollectionBooks activeCollection={this.state.activeCollection} user={this.props.user} />
+          </div>
         </section>
       </div>
     )

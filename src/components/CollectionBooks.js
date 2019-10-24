@@ -4,8 +4,8 @@ import BookDisplay from './BookDisplay'
 export default class CollectionBooks extends Component {
 
   makeBookList = () => {
-    this.props.user.collections
-      .filter(collection => collection.name === this.props.collection)
+    return this.props.user.collections
+      .filter(collection => collection.name === this.props.activeCollection)[0]
       .books
       .map(book => <BookDisplay key={book.isbn13} {...book} />)
   }
@@ -13,7 +13,7 @@ export default class CollectionBooks extends Component {
   render() {
     return(
       <div className="collection-books">
-        {this.props.user ? "" : ""}
+        {this.props.user ? this.makeBookList() : ""}
       </div>
     )
   }

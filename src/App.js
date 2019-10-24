@@ -34,9 +34,16 @@ export default class App extends Component {
     fetch(`http://localhost:3000/users/${userId}`, request)
       .then(response => response.json())
       .then(response => {
-        this.setState({
-          user: response
-        })
+        if (!response.error) {
+          this.setState({
+            user: {
+              ...response.data.attributes,
+              id: response.data.id
+            }
+          })
+        } else {
+          console.log(response.error)
+        }
       })
       .catch(error => console.log(error))
   }
