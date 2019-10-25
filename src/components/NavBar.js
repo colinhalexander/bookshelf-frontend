@@ -8,7 +8,7 @@ export default class NavBar extends Component {
     if (this.props.user) {
       return (
         <>
-          <Link className="nav-link user-link" to={`/users/${this.props.user.username}`} >My Collections</Link>
+          <Link className="nav-link user-link" to={`/users/${this.props.user.username}`} >{this.props.user.username}</Link>
           <div className="nav-link logout" onClick={this.props.logOut}>Logout</div>
         </>
       )

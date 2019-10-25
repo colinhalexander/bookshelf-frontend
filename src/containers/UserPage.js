@@ -15,9 +15,7 @@ export default class UserPage extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.user && localStorage.getItem("userId")) {
-      this.props.setUser(localStorage.getItem("userId"))
-    }
+    this.props.setUser(localStorage.getItem("userId"))
   }
 
   render() {

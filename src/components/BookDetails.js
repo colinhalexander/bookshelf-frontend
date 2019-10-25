@@ -37,7 +37,9 @@ export default class BookDetails extends Component {
 
     fetch(`https://bookshelf-backend-cha.herokuapp.com/${path}`, request)
     
-    this.closeDetailsAndReload()
+    if (this.props.isInCollections) {
+      this.closeDetailsAndReload()
+    }
   }
 
   deleteBook = () => {
