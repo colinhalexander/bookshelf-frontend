@@ -21,7 +21,7 @@ export default class BookDisplay extends Component {
   
   showDetails = () => {
     if (this.state.showDetails) {
-      return <BookDetails closeDetails={this.closeDetails} {...this.props} />
+      return <BookDetails setUser={this.props.setUser ? this.props.setUser : null} closeDetails={this.closeDetails} {...this.props} />
     }
     return <></>
   }

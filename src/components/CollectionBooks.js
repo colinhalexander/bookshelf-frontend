@@ -7,7 +7,7 @@ export default class CollectionBooks extends Component {
     return this.props.user.collections
       .filter(collection => collection.name === this.props.activeCollection)[0]
       .books
-      .map(book => <BookDisplay key={book.isbn13} {...book} />)
+      .map(book => <BookDisplay key={book.isbn13} isInCollections={true} user={this.props.user} {...book} setUser={this.props.setUser} />)
   }
 
   render() {

@@ -21,7 +21,7 @@ export default class App extends Component {
   }
 
   setUser = (userId) => {
-    
+
     const request = {
       method: "GET",
       headers: {
@@ -48,11 +48,19 @@ export default class App extends Component {
       .catch(error => console.log(error))
   }
 
+  logOut = () => {
+    localStorage.removeItem("user_id")
+    localStorage.removeItem("token")
+    setTimeout(() => {
+      window.location.href = "http://localhost:3001/"
+    }, 700)
+  }
+
   render() {
     return (
       <Router>
         <div className="App">
-          <NavBar user={this.state.user} />
+          <NavBar logOut={this.logOut} user={this.state.user} />
           <Route exact path="/" render={() => <HomePage user={this.state.user} />} />
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/contact" component={ContactPage} />

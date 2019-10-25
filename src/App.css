@@ -42,18 +42,25 @@ h1 {
 
 nav {
   padding-right: 10px;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .nav-link {
   padding: 5px 10px;
   text-decoration: none;
   color: rgb(255, 217, 198);
+  cursor: pointer;
 }
 
 .user-link {
   border-left: solid 1px rgb(255, 217, 198);
   margin-left: 5px;
   padding-left: 15px;
+}
+
+.logout {
+  cursor: pointer;
 }
 
 .welcome-header {
@@ -195,7 +202,18 @@ main {
 }
 
 .book-image-and-links > img {
-  width: 200px;
+  width: 180px;
+  max-height: 300px;
+}
+
+.select-collection {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.select-collection > * {
+  margin: 0px 5px;
 }
 
 .link {
@@ -217,6 +235,20 @@ main {
   font-size: 14px;
 }
 
+#delete-book {
+  position: relative;
+  left: 320px;
+  bottom: 25px;
+  border: none;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
 #close-details {
   position: relative;
   left: 380px;
@@ -227,9 +259,15 @@ main {
   font-size: 12px;
   font-weight: 500;
   margin-right: 100px;
+  cursor: pointer;
 }
 
 #close-details:hover {
+  transform: scale(1.05);
+}
+
+
+#delete-book:hover {
   transform: scale(1.05);
 }
 
@@ -394,7 +432,9 @@ main {
 }
 
 .collection-header.active {
-  font-weight: 600
+  font-weight: 600;
+  border-bottom: none;
+  z-index: 1;
 }
 
 .collection-books {
@@ -404,7 +444,9 @@ main {
   background-color: #D6AB95;
   height: 300px;
   width: 550px;
-  border: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+  border-bottom: solid 1px black;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -413,6 +455,7 @@ main {
   padding: 0px;
   margin: 50px 15px 0px 15px;
   min-width: 160px;
+  max-width: 200px;
 }
 
 @keyframes fade-in {

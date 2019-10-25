@@ -6,7 +6,12 @@ export default class NavBar extends Component {
 
   toggleLoginLink = () => {
     if (this.props.user) {
-      return (<Link className="nav-link user-link" to={`/users/${this.props.user.username}`} >{this.props.user.username}</Link>)
+      return (
+        <>
+          <Link className="nav-link user-link" to={`/users/${this.props.user.username}`} >My Collections</Link>
+          <div className="nav-link logout" onClick={this.props.logOut}>Logout</div>
+        </>
+      )
     } else {
       return (<Link className="nav-link" to={{ pathname: "/signin", existingUser: true}} >Login</Link>)
     }

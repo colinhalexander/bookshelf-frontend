@@ -9,7 +9,6 @@ export default class UserPage extends Component {
   }
 
   handleClick = (event) => {
-    console.log(event.target.innerText)
     this.setState({
       activeCollection: event.target.innerText
     })
@@ -28,7 +27,7 @@ export default class UserPage extends Component {
         <section className="user-page">
           <div className="collections-display">
             <CollectionsList user={this.props.user} activeCollection={this.state.activeCollection} handleClick={this.handleClick} />
-            <CollectionBooks activeCollection={this.state.activeCollection} user={this.props.user} />
+            <CollectionBooks activeCollection={this.state.activeCollection} user={this.props.user} setUser={this.props.setUser} />
           </div>
         </section>
       </div>
