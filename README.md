@@ -1,4 +1,4 @@
-## BookShelf (1.0.0)
+## BookShelf (v1.0.0)
 
 This app, hosted [here] (https://bookshelf-ad7a1.firebaseapp.com/), was created as a project for the Flatiron School's Immersive Software Engineering program. The frontend is built in React and the [backend] (https://github.com/colinhalexander/bookshelf-backend) in Ruby on Rails. 
 
