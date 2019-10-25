@@ -9,7 +9,7 @@ export default class SearchContainer extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/nyt")
+    fetch("https://bookshelf-backend-cha.herokuapp.com/nyt")
       .then(response => response.json())
       .then(response => {
         
@@ -49,7 +49,7 @@ export default class SearchContainer extends Component {
       })
     }
 
-    fetch("http://localhost:3000/google", request)
+    fetch("https://bookshelf-backend-cha.herokuapp.com/google", request)
       .then(response => response.json())
       .then(response => {
         const books = response.items.map(book => {

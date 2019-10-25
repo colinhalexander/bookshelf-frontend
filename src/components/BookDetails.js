@@ -35,7 +35,7 @@ export default class BookDetails extends Component {
       })
     }
 
-    fetch(`http://localhost:3000/${path}`, request)
+    fetch(`https://bookshelf-backend-cha.herokuapp.com/${path}`, request)
     
     this.closeDetailsAndReload()
   }
@@ -50,7 +50,7 @@ export default class BookDetails extends Component {
       }
     }
 
-    fetch(`http://localhost:3000/books/${this.props.id}`, request)
+    fetch(`https://bookshelf-backend-cha.herokuapp.com/books/${this.props.id}`, request)
 
     this.closeDetailsAndReload()
   }

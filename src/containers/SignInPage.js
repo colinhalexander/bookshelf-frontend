@@ -57,7 +57,7 @@ export default class SignInPage extends Component {
   }
   
   createNewUser = (request) => {
-    fetch("http://localhost:3000/users", request)
+    fetch("https://bookshelf-backend-cha.herokuapp.com/users", request)
       .then(response => response.json())
       .then(response => {
         if (!response.error) {
@@ -70,13 +70,13 @@ export default class SignInPage extends Component {
   }
 
   logInUser = (request) => {
-    fetch("http://localhost:3000/login", request)
+    fetch("https://bookshelf-backend-cha.herokuapp.com/login", request)
       .then(response => response.json())
       .then(response => {
         localStorage.setItem("token", response.token)
         localStorage.setItem("userId", response.user_id)
         this.props.setUser(response.user_id)
-        window.location.href = "http://localhost:3001/"
+        window.location.href = "https://bookshelf-ad7a1.firebaseapp.com/"
       })
       .catch(error => console.log(error))
   }

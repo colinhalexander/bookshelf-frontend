@@ -31,7 +31,7 @@ export default class App extends Component {
       }
     }
 
-    fetch(`http://localhost:3000/users/${userId}`, request)
+    fetch(`https://bookshelf-backend-cha.herokuapp.com/users/${userId}`, request)
       .then(response => response.json())
       .then(response => {
         if (!response.error) {
@@ -52,7 +52,7 @@ export default class App extends Component {
     localStorage.removeItem("user_id")
     localStorage.removeItem("token")
     setTimeout(() => {
-      window.location.href = "http://localhost:3001/"
+      window.location.href = "https://bookshelf-ad7a1.firebaseapp.com/"
     }, 700)
   }
 
