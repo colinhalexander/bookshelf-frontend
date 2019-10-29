@@ -73,12 +73,13 @@ export default class BookDetails extends Component {
   showCollectionMenu = () => {
     return (
       <div className="select-collection">
-        <button onClick={this.moveBookToCollection} className="add-book-btn">
-            {this.props.isInCollections ? "Change Collection:" : "Add to Collection:"}
-        </button>
         <select onChange={this.handleSelection} name="collection">
+          <option value="">Select Collection</option>
           {this.generateOptions()}
         </select>
+        <button onClick={this.moveBookToCollection} className="add-book-btn">
+            {this.props.isInCollections ? "Change Collection" : "Add to Collection"}
+        </button>
       </div>
     )
   }
