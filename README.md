@@ -1,6 +1,6 @@
 ## BookShelf (v1.0.0)
 
-This app, hosted [here](https://bookshelf-ad7a1.firebaseapp.com/), was created as a project for the Flatiron School's Immersive Software Engineering program. The frontend is built in React and the [backend](https://github.com/colinhalexander/bookshelf-backend) in Ruby on Rails. 
+This app, hosted [here](https://bookshelf-ad7a1.firebaseapp.com/) (frontend) and [here](https://bookshelf-backend-cha.herokuapp.com/) (backend), was created as a project for the Flatiron School's Immersive Software Engineering program. The frontend is built in React and the [backend](https://github.com/colinhalexander/bookshelf-backend) in Ruby on Rails. 
 
 BookShelf is designed for users to search for books using the Google Books and NYT Books APIs, add them to their collections, set reading goals, and track their progress.
 
